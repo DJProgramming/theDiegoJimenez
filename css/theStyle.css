@@ -1,4 +1,6 @@
 * {
+    margin: 0;
+    padding: 0;
 	box-sizing: border-box;
 }
 
@@ -29,7 +31,6 @@ body {
 #topBar {
 	height: 50px;
 	display: flex;
-    padding: 0;
 	/*justify-content: center;*/
 	background: linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
 	font-family: Verdana, sans-serif;
