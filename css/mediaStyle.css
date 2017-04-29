@@ -3,7 +3,7 @@ iframe {
     max-width: var(--videoWidth);
     max-height: var(--videoHeight);
     /*width: var(--videoWidth);*/
-    min-width: var(--minVideoWidth);
+    /*min-width: var(--minVideoWidth);*/
     /*height: var(--videoHeight);*/
     /*max-width: 100%;*/
     /*min-width: 400px;*/
