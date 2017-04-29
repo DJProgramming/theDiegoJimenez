@@ -10,7 +10,7 @@ iframe {
     /*height: auto;*/
 }
 
-#Video_420 {
+.video {
     border: 1px solid white;
     overflow: show;
     display: block;
