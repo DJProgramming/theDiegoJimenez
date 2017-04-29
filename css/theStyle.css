@@ -1,6 +1,18 @@
+/* global variables */
+:root {
+    /* color */
+    --backgroundColor: black;
+    --evilDarkGray: #666;       /* dark gray */
+
+    /* video dimensions */
+    --videoWidth: 100%;
+    --videoHeight: calc(var(--videoWidth) * 9/16);
+
+    --minVideoWidth: 400px;
+}
+
 * {
     margin: 0;
-    /*padding: 0;*/
 	box-sizing: border-box;
 }
 
@@ -18,7 +30,7 @@
 /* types */
 
 body {
-	background: black;
+	background: var(--backgroundColor);
 }
 
 li {
@@ -27,7 +39,7 @@ li {
     margin-left: 10px;
     padding-top: 0;
     padding-right: 10px;
-    border-right: 1px solid gray;
+    /*border-right: 1px solid gray;*/
     color: black;
 }
 li:hover {
@@ -70,8 +82,8 @@ a:hover {
     display: none;
 }
 
-#one, #three {
-    background: gray;
+#home, #media {
+    border-right: 1px solid gray;
 }
 
 /* For mobile phones: */
@@ -113,6 +125,6 @@ a:hover {
 
 @media only screen and (orientation: landscape) {
     body {
-        background-color: white;
+        /*background-color: white;*/
     }
 }

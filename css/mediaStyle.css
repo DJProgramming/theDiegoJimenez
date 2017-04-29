@@ -1,0 +1,18 @@
+iframe {
+    margin: auto;
+    max-width: var(--videoWidth);
+    max-height: var(--videoHeight);
+    /*width: var(--videoWidth);*/
+    min-width: var(--minVideoWidth);
+    /*height: var(--videoHeight);*/
+    /*max-width: 100%;*/
+    /*min-width: 400px;*/
+    /*height: auto;*/
+}
+
+#Video_420 {
+    border: 1px solid white;
+    overflow: show;
+    display: block;
+    margin: auto;
+}
