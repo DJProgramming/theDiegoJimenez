@@ -7,8 +7,11 @@
     /* video dimensions */
     --videoWidth: 100%;
     --videoHeight: calc(var(--videoWidth) * 9/16);
-
     --minVideoWidth: 400px;
+
+    /* border parameters */
+    --borderThickness: 2px;
+    --borderColor: white;
 }
 
 * {

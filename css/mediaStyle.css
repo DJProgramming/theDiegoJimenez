@@ -11,8 +11,14 @@ iframe {
 }
 
 .video {
-    border: 1px solid white;
-    overflow: show;
+    border: var(--borderThickness) solid var(--borderColor);
     display: block;
     margin: auto;
+}
+
+.photo {
+    border: var(--borderThickness) solid var(--borderColor);
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
