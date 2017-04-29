@@ -4,19 +4,29 @@
 //   });
 // }
 
+var visible = false;
+
 var main = function() {
-  /* Push the body and the nav over by 285px over */
-  $('.iconMenu').click(function() {
+  $('.menuIcon').click(function() {
+    if(visible) {
+      $('#navigation').hide();
+      visible = false;
+    } else {
+      $('#navigation').show();
+      visible = true;
+    }
+    /*
     $('.slideIn').animate({
-      top: "0px"
+      top: "10px"
     }, 200);
   });
 
-  /* Then push them back */
   $('.close').click(function() {
     $('.slideIn').animate({
       top: "-300px"
     }, 200);
+    */
+
   });
 };
 
