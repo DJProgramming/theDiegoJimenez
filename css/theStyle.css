@@ -30,7 +30,6 @@ li {
     border-right: 1px solid gray;
     color: black;
 }
-
 li:hover {
     color: white;
 }
@@ -39,23 +38,13 @@ a {
     text-decoration: none;
     color: black;
 }
-
 a:hover {
     color: white;
 }
 
 /* classes */
 
-.slideIn {
-    /*width: 285px;*/
-    top: -300px;
-    left: 40px;
-    position: fixed;
-}
 
-.close {
-    color: gray;
-}
 
 /* ids */
 
@@ -78,6 +67,10 @@ a:hover {
 
 #navigation {
     display: none;
+}
+
+#one, #three {
+    background: gray;
 }
 
 /* For mobile phones: */
@@ -119,6 +112,6 @@ a:hover {
 
 @media only screen and (orientation: landscape) {
     body {
-        background-color: lightblue;
+        background-color: white;
     }
 }
