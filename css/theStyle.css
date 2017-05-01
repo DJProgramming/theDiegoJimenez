@@ -75,7 +75,9 @@ a:hover {
 	height: 50px;
 	display: flex;
 	/*justify-content: center;*/
-    border-bottom: 1px solid black;
+    /*border-bottom: 1px solid black;*/
+    border-bottom: 1px solid white;
+    margin-bottom: 40px;
 	background: linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
 	font-family: Verdana, sans-serif;
 }
