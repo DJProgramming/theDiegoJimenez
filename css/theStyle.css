@@ -41,6 +41,8 @@
 
 body {
 	background: var(--backgroundColor);
+    /*background: white;*/
+    /*background: linear-gradient(#ffffff, #d4d4d4);*/
 }
 
 li {
@@ -102,6 +104,11 @@ a:hover {
     border-right: 1px solid gray;
 }
 
+#container {
+    margin: auto;
+    max-width: 600px;
+}
+
 #profile {
     width: var(--profileImageSize);
     height: var(--profileImageSize);
@@ -113,8 +120,7 @@ a:hover {
 
 #aboutInfo {
     color: white;
-    width: 33%;
-    /*border: 1px solid red;*/
+    /*width: 33%;*/
     text-align: center;
     text-shadow: 0 var(--textShadowDisplacement) var(--textShadowDisplacement) var(--evilDarkGray);
     display: block;

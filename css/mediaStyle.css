@@ -2,6 +2,8 @@ iframe {
     margin: auto;
     max-width: var(--videoWidth);
     max-height: var(--videoHeight);
+    width: var(--videoWidth);
+    height: var(--videoHeight);
     /*width: var(--videoWidth);*/
     /*min-width: var(--minVideoWidth);*/
     /*height: var(--videoHeight);*/
@@ -14,6 +16,11 @@ iframe {
     border: var(--borderThickness) solid var(--borderColor);
     display: block;
     margin: auto;
+}
+
+.photoRow {
+    width: 100%;
+    padding: 0;
 }
 
 .photo {
