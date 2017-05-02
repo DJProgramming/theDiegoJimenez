@@ -1,15 +1,18 @@
 iframe {
+    width: 100%;
+    height: 100%;
     margin: auto;
-    max-width: var(--videoWidth);
-    max-height: var(--videoHeight);
-    width: var(--videoWidth);
-    height: var(--videoHeight);
-    /*width: var(--videoWidth);*/
-    /*min-width: var(--minVideoWidth);*/
-    /*height: var(--videoHeight);*/
-    /*max-width: 100%;*/
-    /*min-width: 400px;*/
-    /*height: auto;*/
+    /*max-width: 1280px;*/
+    /*max-height: 720px;*/
+}
+
+.videoDiv {
+    width: 100%;
+    height: 0;
+    padding-top: 0;
+    padding-bottom: 56.25%; /* preserves the 16/9 aspect ratio */
+    /*margin: 15px 0;*/
+    /*border: 1px solid red;*/
 }
 
 .video {

@@ -7,11 +7,6 @@
     --borderColor: white;
     --textShadowColor: #909090;
 
-    /* video dimensions */
-    --videoWidth: 100%;
-    --videoHeight: calc(var(--videoWidth) * 9/16);
-    --minVideoWidth: 400px;
-
     /* border parameters */
     --borderThickness: 2px;
 
@@ -130,6 +125,7 @@ a:hover {
 /* For mobile phones: */
 [class*="col-"] {
     width: 100%;
+    /*border: 1px solid green;*/
 }
 
 @media only screen and (min-width: 600px) {
