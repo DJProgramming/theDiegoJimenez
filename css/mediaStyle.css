@@ -9,7 +9,6 @@ iframe {
 .videoDiv {
     width: 100%;
     height: 0;
-    overflow: show;
     /*min-height: 100px;*/
     padding-top: 0;
     padding-bottom: 56.25%; /* preserves the 16/9 aspect ratio */
