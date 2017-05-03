@@ -27,8 +27,13 @@ iframe {
 
 .photo {
     border: var(--borderThickness) solid var(--borderColor);
+    background-color: white;
+    cursor: pointer;
     max-width: 100%;
     width: 100%;
     height: auto;
     /*box-shadow: 0px 10px 8px var(--darkGray);*/
+}
+.photo:hover {
+    opacity: 0.8;
 }
