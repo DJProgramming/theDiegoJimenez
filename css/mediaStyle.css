@@ -1,6 +1,14 @@
 #mediaToggle, #videoToggle, #photoToggle {
     color: white;
+    border: 1px solid var(--borderColor);
     text-align: center;
+}
+
+.buttonRow {
+			width: 100%;
+			padding: 0;
+			display: flex;
+			align-items: center;
 }
 
 iframe {
