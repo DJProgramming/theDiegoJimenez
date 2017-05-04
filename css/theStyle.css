@@ -67,7 +67,20 @@ a:hover {
 
 /* classes */
 
+.quarter {
+    width: 25%;
+    background: var(--darkGray);
+}
 
+.third {
+    width: 33%;
+    background: var(--darkGray);
+}
+
+.half {
+    width: 50%;
+    background: var(--darkGray);
+}
 
 /* ids */
 

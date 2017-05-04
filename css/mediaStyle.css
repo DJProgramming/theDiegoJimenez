@@ -4,7 +4,7 @@ iframe {
     margin: auto;
 }
 
-#videoToggle, #photoToggle {
+#mediaToggle, #videoToggle, #photoToggle {
     color: white;
     text-align: center;
 }

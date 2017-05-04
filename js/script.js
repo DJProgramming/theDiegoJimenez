@@ -2,6 +2,7 @@ var main = function() {
   menu();           // show or hide menu
   toggleVideos();   // show or hide videos
   togglePhotos();   // show or hide photos
+  showMedia();      // show all media
 };
 
 var menu = function() {
@@ -12,14 +13,26 @@ var menu = function() {
 
 var toggleVideos = function() {
   $('#videoToggle').click(function() {
-    $('.videos').fadeToggle(1000);
+    // $('.videos').fadeToggle(1000);
+    $('.videos').fadeIn(1000);
+    $('.photos').fadeOut(1000);
   });
 }
 
 var togglePhotos = function() {
   $('#photoToggle').click(function() {
-    $('.photos').fadeToggle(1000);
+    // $('.photos').fadeToggle(1000);
+    $('.photos').fadeIn(1000);
+    $('.videos').fadeOut(1000);
   });
 };
+
+var showMedia = function() {
+  $('#mediaToggle').click(function() {
+    // $('.photos').fadeToggle(1000);
+    $('.photos').fadeIn(1000);
+    $('.videos').fadeIn(1000);
+  });
+}
 
 $(document).ready(main);
