@@ -44,4 +44,7 @@ var resizeHeight = function () {
 
 $(document).ready(main);
 
- $(window).resize(resizeHeight);
+$(window).resize(resizeHeight);
+
+$(window).orient(resizeHeight);
+
