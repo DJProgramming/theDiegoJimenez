@@ -16,6 +16,7 @@ var menu = function() {
 
 // show only videos
 var toggleVideos = function() {
+  resizeVideoHeight();
   $('#videoToggle').click(function() {
     $('.videos').fadeIn(1000);
     $('.photos').fadeOut(1000);
@@ -24,6 +25,7 @@ var toggleVideos = function() {
 
 // show only photos
 var togglePhotos = function() {
+  resizeVideoHeight();
   $('#photoToggle').click(function() {
     $('.photos').fadeIn(1000);
     $('.videos').fadeOut(1000);
@@ -32,6 +34,7 @@ var togglePhotos = function() {
 
 // shows all photos & videos
 var showMedia = function() {
+  resizeVideoHeight();
   $('#mediaToggle').click(function() {
     $('.photos').fadeIn(1000);
     $('.videos').fadeIn(1000);
