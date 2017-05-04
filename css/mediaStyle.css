@@ -34,7 +34,7 @@ iframe {
 
 .photo {
     /*border: var(--borderThickness) solid var(--borderColor);*/
-    background-color: white;
+    /*background-color: white;*/
     cursor: pointer;
     max-width: 100%;
     width: 100%;
@@ -48,7 +48,7 @@ iframe {
     opacity: 0.8;
 }
 
-.modal {
+/*.modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -64,4 +64,4 @@ iframe {
     display: block;
     width: 80%;
     max-width: 700px;
-}
+}*/
