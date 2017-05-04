@@ -34,12 +34,12 @@ var showMedia = function() {
     $('.photos').fadeIn(1000);
     $('.videos').fadeIn(1000);
   });
-}
+};
 
 var resizeHeight = function () {
     var ratio = 9 / 16, $div = $('.video');
     $div.height($div.width() * ratio);
     $(document).bind('resize', function() { $div.height($div.width() * ratio); });
-});
+};
 
 $(document).ready(main);
