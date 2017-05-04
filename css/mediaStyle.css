@@ -1,12 +1,12 @@
+#mediaToggle, #videoToggle, #photoToggle {
+    color: white;
+    text-align: center;
+}
+
 iframe {
     width: 100%;
     height: 100%;
     margin: auto;
-}
-
-#mediaToggle, #videoToggle, #photoToggle {
-    color: white;
-    text-align: center;
 }
 
 .videoDiv {
