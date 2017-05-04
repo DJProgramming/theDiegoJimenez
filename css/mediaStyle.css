@@ -11,6 +11,7 @@ iframe {
 
 .videoDiv {
     width: 100%;
+    /*height: 56.25vw;*/
     height: 0;
     padding-top: 0;
     padding-bottom: var(--heightWidthRatio); /* preserves the 16/9 aspect ratio */

@@ -3,6 +3,7 @@ var main = function() {
   toggleVideos();   // show or hide videos
   togglePhotos();   // show or hide photos
   showMedia();      // show all media
+  resizeHeight();
 };
 
 var menu = function() {
@@ -34,5 +35,11 @@ var showMedia = function() {
     $('.videos').fadeIn(1000);
   });
 }
+
+var resizeHeight = function () {
+    var ratio = 9 / 16, $div = $('.video');
+    $div.height($div.width() * ratio);
+    $(document).bind('resize', function() { $div.height($div.width() * ratio); });
+});
 
 $(document).ready(main);
