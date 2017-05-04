@@ -1,50 +1,68 @@
 var main = function() {
-  menu();           // show or hide menu
-  toggleVideos();   // show or hide videos
-  togglePhotos();   // show or hide photos
-  showMedia();      // show all media
-  resizeHeight();
+  menu();               // show or hide menu
+  toggleVideos();       // show or hide videos
+  togglePhotos();       // show or hide photos
+  showMedia();          // show all media
+  resizeVideoHeight();  // resize video height
+  // displayModal();
 };
 
+// display navigation menu
 var menu = function() {
   $('.menuIcon').click(function() {
     $('#navigation').fadeToggle(1000);
   });
 };
 
+// show only videos
 var toggleVideos = function() {
   $('#videoToggle').click(function() {
-    // $('.videos').fadeToggle(1000);
     $('.videos').fadeIn(1000);
     $('.photos').fadeOut(1000);
   });
 }
 
+// show only photos
 var togglePhotos = function() {
   $('#photoToggle').click(function() {
-    // $('.photos').fadeToggle(1000);
     $('.photos').fadeIn(1000);
     $('.videos').fadeOut(1000);
   });
 };
 
+// shows all photos & videos
 var showMedia = function() {
   $('#mediaToggle').click(function() {
-    // $('.photos').fadeToggle(1000);
     $('.photos').fadeIn(1000);
     $('.videos').fadeIn(1000);
   });
 };
 
-var resizeHeight = function () {
+// Used to set video's height to be a factor of its width
+var resizeVideoHeight = function () {
     var ratio = 9 / 16, $div = $('.video');
     $div.height($div.width() * ratio);
     $(document).bind('resize', function() { $div.height($div.width() * ratio); });
 };
 
+var displayModal = function() {
+  var modal = document.getElementById('photoModal');
+
+  var img = document.getElementById('photo');
+  var modalImg = document.getElementById('modalImage');
+
+  console.log(img.src);
+
+  img.onclick = function() {
+    console.log("click");
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  };
+};
+
 $(document).ready(main);
 
-$(window).resize(resizeHeight);
+$(window).resize(resizeVideoHeight);
 
-$(window).orient(resizeHeight);
-
+$(window).on("orientationchange", resizeVideoHeight());
+// $(window).orient(resizeVideoHeight);
