@@ -43,3 +43,5 @@ var resizeHeight = function () {
 };
 
 $(document).ready(main);
+
+ $(window).resize(resizeHeight);
