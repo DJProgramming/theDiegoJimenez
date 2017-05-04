@@ -14,7 +14,7 @@ iframe {
     height: 0;
     /*min-height: 100px;*/
     padding-top: 0;
-    padding-bottom: 56.25%; /* preserves the 16/9 aspect ratio */
+    padding-bottom: var(--heightWidthRatio); /* preserves the 16/9 aspect ratio */
     /*margin: 15px 0;*/
     /*border: 1px solid red;*/
 }
