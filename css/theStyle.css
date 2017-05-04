@@ -128,6 +128,7 @@ a:hover {
 #profile {
     width: var(--profileImageSize);
     height: var(--profileImageSize);
+    background: linear-gradient(#ffffff, #000000);
     display: block;
     margin: auto;
     border-radius: 200%;
