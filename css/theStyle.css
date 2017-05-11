@@ -19,6 +19,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
 	box-sizing: border-box;
+    /*font-family: Verdana, sans-serif;*/
 }
 
 .row {
@@ -95,7 +96,7 @@ a:hover {
     /*border-bottom: 1px solid black;*/
     border-bottom: 1px solid white;
 	background: linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
-	font-family: Verdana, sans-serif;
+	/*font-family: Verdana, sans-serif;*/
 }
 
 #menu {
