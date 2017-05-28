@@ -1100,27 +1100,82 @@ function highlightMinorChord() {
     }
 }
 
-// toggle highlight
+// highlight key
+// called by keyboardTrigger
+// input is the name of div to change
+function changeColor(input) {
+    // alert(canColor[input]);
+    if(canColor[input] == false) { return; }
+    if(hasClass(document.getElementById(input), 'lStraightKey')) {
+        document.getElementById(input).className = "highlightKey lStraightKey";
+    } else if(hasClass(document.getElementById(input), 'cutKey')) {
+        document.getElementById(input).className = "highlightKey cutKey";
+    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+        document.getElementById(input).className = "highlightKey rStraightKey";
+    } else if(hasClass(document.getElementById(input), 'blackKey')) {
+        document.getElementById(input).className = "key highlightBlackKey";
+    }
+}
+
+// change key color back to default color
+// called by keyboardUntrigger
+// input is the name of div to change
+function revertColor(input) {
+    if(canColor[input] == false) { return; }
+    if(hasClass(document.getElementById(input), 'lStraightKey')) {
+        document.getElementById(input).className = "key lStraightKey";
+    } else if(hasClass(document.getElementById(input), 'cutKey')) {
+        document.getElementById(input).className = "key cutKey";
+    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+        document.getElementById(input).className = "key rStraightKey";
+    } else if(hasClass(document.getElementById(input), 'highlightBlackKey')) {
+        document.getElementById(input).className = "key blackKey";
+    }
+}
+
+// highlight key
 // called by keyboardTrigger
 // input is the name of div to change
 function toggleColor(input) {
     if(canColor[input] == false) { return; }
     if(hasClass(document.getElementById(input), 'lStraightKey') || hasClass(document.getElementById(input), 'cuttKey') || hasClass(document.getElementById(input), 'rStraightKey')) {
+        $(input).toggleClass("key");
         $(input).toggleClass("highlightKey");
     } else if(hasClass(document.getElementById(input), 'blackKey')) {
         $(input).toggleClass("highlightBlackKey");
+        $(input).toggleClass("blackKey");
     }
 }
 
-// toggle select
+// highlight key
 // called by keyboardTrigger
 // input is the name of div to change
-function toggleSelectColor(input) {
+function changeSelectColor(input) {
     if(canColor[input] == false) { return; }
-    if(hasClass(document.getElementById(input), 'lStraightKey') || hasClass(document.getElementById(input), 'cuttKey') || hasClass(document.getElementById(input), 'rStraightKey')) {
-        $(input).toggleClass("selectKey");
+    if(hasClass(document.getElementById(input), 'lStraightKey')) {
+        document.getElementById(input).className = "selectKey lStraightKey";
+    } else if(hasClass(document.getElementById(input), 'cutKey')) {
+        document.getElementById(input).className = "selectKey cutKey";
+    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+        document.getElementById(input).className = "selectKey rStraightKey";
     } else if(hasClass(document.getElementById(input), 'blackKey')) {
-        $(input).toggleClass("selectBlackKey");
+        document.getElementById(input).className = "key selectBlackKey";
+    }
+}
+
+// change key color back to default color
+// called by keyboardUntrigger
+// input is the name of div to change
+function revertSelectColor(input) {
+    if(canColor[input] == false) { return; }
+    if(hasClass(document.getElementById(input), 'lStraightKey')) {
+        document.getElementById(input).className = "key lStraightKey";
+    } else if(hasClass(document.getElementById(input), 'cutKey')) {
+        document.getElementById(input).className = "key cutKey";
+    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+        document.getElementById(input).className = "key rStraightKey";
+    } else if(hasClass(document.getElementById(input), 'selectBlackKey')) {
+        document.getElementById(input).className = "key blackKey";
     }
 }
 
