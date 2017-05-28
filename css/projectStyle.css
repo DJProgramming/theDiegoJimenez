@@ -49,6 +49,14 @@
 /* Classes */
 /*********************************************/
 
+.showcase {
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;  /* Chrome/Safari */        
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE10+ */
+}
+
 /* key defines the most general atributes of the musical keyboard keys */
 .key {
     background: var(--naturalKeyColor);
@@ -152,7 +160,6 @@
 
 #keyboard {
     box-sizing: initial;
-    overflow: hidden;
     width: calc(var(--whiteKeyWidth) * var(--numberOfWhiteKeys));
     /*width: calc(100% - var(--whiteKeyHeight)/20);*/
     margin: auto;
