@@ -152,6 +152,7 @@
 
 #keyboard {
     box-sizing: initial;
+    overflow: hidden;
     width: calc(var(--whiteKeyWidth) * var(--numberOfWhiteKeys));
     /*width: calc(100% - var(--whiteKeyHeight)/20);*/
     margin: auto;

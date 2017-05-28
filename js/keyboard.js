@@ -99,7 +99,6 @@ function load() {
         soundfontUrl: "../audio_plugin/",                              // locate soundfont javascript location
         instrument: "acoustic_grand_piano",                         // load wav files to be used as key sounds
         onsuccess: function() {
-            alert("Passed!");
             MIDI.setVolume(0, globalVelocity);                      // set velocity of midi plugin
         }
     })
