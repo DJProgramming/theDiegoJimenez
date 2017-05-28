@@ -96,9 +96,10 @@ document.addEventListener("keypress", showDebug, false);            // responds 
 // is called when html body is loaded to load MIDI.JS plugin
 function load() {
     MIDI.loadPlugin({
-        soundfontUrl: "../static/js/",                              // locate soundfont javascript location
+        soundfontUrl: "../audio_plugin/",                              // locate soundfont javascript location
         instrument: "acoustic_grand_piano",                         // load wav files to be used as key sounds
         onsuccess: function() {
+            alert("Passed!");
             MIDI.setVolume(0, globalVelocity);                      // set velocity of midi plugin
         }
     })
