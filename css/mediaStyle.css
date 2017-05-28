@@ -68,6 +68,30 @@ iframe {
     opacity: 0.8;
 }
 
+.viewer {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+}
+
+.photoSlide {
+    display: none;
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+    /*border: 1px solid red;*/
+}
+
 /*.modal {
     display: none;
     position: fixed;
