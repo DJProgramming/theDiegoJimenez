@@ -63,6 +63,8 @@ var displayModal = function() {
   };
 };
 
+$("#navigation").html("testing!");
+
 $(document).ready(main);
 
 $(window).resize(resizeVideoHeight);
