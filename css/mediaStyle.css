@@ -115,13 +115,17 @@ button {
 
 .close {
     font-size: 1em;
-    position: absolute;
-    left: 50%;
-    width: 10%;
+    color: white;
+    position: relative;
+    left: 5%;
+    /*position: absolute;*/
+    /*left: 50%;*/
+    /*width: 10%;*/
     height: 30px;
+    /*margin: auto;*/
     /*height: 100%;*/
-    margin-left: -5%;
-    opacity: .2;
+    /*margin-left: -5%;*/
+    /*opacity: .2;*/
 }
 .close:focus {
     opacity: .5;
@@ -142,6 +146,9 @@ button {
 }
 .previous:hover {
     opacity: .5;
+}
+.previous:active {
+    opacity: 0;
 }
 
 .next {
