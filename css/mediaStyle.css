@@ -123,7 +123,7 @@ button {
     margin-left: -5%;
     opacity: .1;
 }
-.close:hover {
+.close:focus {
     opacity: .5;
 }
 
@@ -134,7 +134,7 @@ button {
     height: 100%;
     opacity: 0;
 }
-.previous:hover {
+.previous:focus {
     opacity: .5;
 }
 
@@ -145,7 +145,7 @@ button {
     height: 100%;
     opacity: 0;
 }
-.next:hover {
+.next:focus {
     opacity: .5;
 }
 
