@@ -85,6 +85,70 @@ iframe {
     padding-top: 20px;
 }
 
+.photoViewerBox {
+    position: relative;
+    /*border: 1px solid red;*/
+}
+
+button {
+    border: none;
+}
+
+.navButtons {
+    position: absolute;
+    /*left: 5%;*/
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    /*border: 1px solid blue;*/
+    z-index: 3;
+}
+
+.navButton {
+    font-size: 2em;
+    color: white;
+    background: black;
+}
+
+.close {
+    font-size: 1em;
+    position: absolute;
+    left: 50%;
+    width: 10%;
+    height: 30px;
+    /*height: 100%;*/
+    margin-left: -5%;
+    opacity: .1;
+}
+.close:hover {
+    opacity: .5;
+}
+
+.previous {
+    position: absolute;
+    left: 0;
+    width: 20%;
+    height: 100%;
+    opacity: 0;
+}
+.previous:hover {
+    opacity: .5;
+}
+
+.next {
+    position: absolute;
+    right: 0;
+    width: 20%;
+    height: 100%;
+    opacity: 0;
+}
+.next:hover {
+    opacity: .5;
+}
+
 .photoSlide {
     display: none;
     position: relative;
@@ -94,6 +158,10 @@ iframe {
     width: 90%;
     max-width: 1200px;
     /*border: 1px solid red;*/
+}
+
+.photoSlide .photo:hover {
+    opacity: 1;
 }
 
 /*.modal {
