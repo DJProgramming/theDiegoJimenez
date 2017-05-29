@@ -22,6 +22,17 @@ var displayPhoto = function(number) {
   $(photoSlides[lastPhoto]).hide();
   $(photoSlides[number]).show();
   lastPhoto = number;
+  // alert(lastPhoto);
+  if(lastPhoto-1 >= 0) {
+    $(".previous").show();
+  } else {
+    $(".previous").hide();
+  }
+  if(lastPhoto+1 < photoSlides.length) {
+    $(".next").show();
+  } else {
+    $(".next").hide();
+  }
 }
 
 // navigate to next or previous photo
