@@ -140,7 +140,7 @@ button {
     opacity: 0;
 }
 .previous:focus {
-    opacity: .5;
+    opacity: 0;
 }
 .previous:hover {
     opacity: .5;
@@ -154,7 +154,7 @@ button {
     opacity: 0;
 }
 .next:focus {
-    opacity: .5;
+    opacity: 0;
 }
 .next:hover {
     opacity: .5;
