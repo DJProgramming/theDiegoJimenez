@@ -79,6 +79,7 @@ iframe {
     height: 100%;
     overflow: auto;
     background-color: black;
+    /*border: 1px solid white;*/
 }
 
 .viewer-m {
@@ -116,22 +117,19 @@ button {
 .close {
     font-size: 1em;
     color: white;
+    text-align: center;
     position: relative;
-    left: 5%;
-    /*position: absolute;*/
-    /*left: 50%;*/
-    /*width: 10%;*/
+    /*left: 5%;*/
+    max-width: 10%;
     height: 30px;
-    /*margin: auto;*/
-    /*height: 100%;*/
-    /*margin-left: -5%;*/
-    /*opacity: .2;*/
+    margin: auto;
+    opacity: .8;
 }
 .close:focus {
-    opacity: .5;
+    opacity: 1;
 }
 .close:hover {
-    opacity: .5;
+    opacity: 1;
 }
 
 .previous {
@@ -146,9 +144,6 @@ button {
 }
 .previous:hover {
     opacity: .5;
-}
-.previous:active {
-    opacity: 0;
 }
 
 .next {
