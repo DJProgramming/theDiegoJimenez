@@ -93,6 +93,7 @@
     height: var(--blackKeyHeight);
     box-shadow: inset var(--borderOffset) var(--borderOffset) 0 calc(-1 * var(--borderThickness)) var(--borderColor), inset calc(-1 * var(--borderOffset)) calc(-1 * var(--borderOffset)) 0 calc(-1 * var(--borderThickness)) var(--borderColor);
     z-index: var(--minDepth); /* place above other keys */
+    position: relative;
 }
 
 /* white key in between two black keys */
