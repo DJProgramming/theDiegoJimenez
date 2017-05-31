@@ -15,6 +15,7 @@
 }
 
 * {
+    font-family: 'Josefin Sans', sans-serif;
     margin: 0;
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -48,9 +49,6 @@
 body {
 	/*background: var(--backgroundColor);*/
     background-color: black;
-    /*background: url("../images/background.jpg");*/
-    background-size: cover;
-    background-position: center;
 }
 
 h1 {
@@ -58,6 +56,7 @@ h1 {
 }
 
 li {
+    vertical-align: sub;
     display: inline;
     color: black;
     margin: 0 0 0 10px;     /* top, right, bottom, left */
@@ -68,11 +67,11 @@ li:hover {
     color: white;
 }
 
-a {
+li a {
     text-decoration: none;
     color: black;
 }
-a:hover {
+li a:hover {
     color: white;
 }
 
@@ -98,12 +97,10 @@ a:hover {
 #topBar {
 	height: 50px;
 	display: flex;
-    /*border-bottom: 1px solid black;*/
     border-bottom: 1px solid white;
 	background: linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
     background: -webkit-linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
     background: -moz-linear-gradient(to right, #bbbbbb, #bbbbbb, #bbbbbb, #efefef, #efefef, #efefef);
-	/*font-family: Verdana, sans-serif;*/
 }
 
 #menu {
@@ -114,10 +111,11 @@ a:hover {
 }
 
 #navigation {
+    display: none;
+    /*vertical-align: middle;*/
     /*border: 1px solid black;*/
     margin: 0;
     padding: 0;
-    display: none;
 }
 
 #home, #media, #projects {
@@ -133,6 +131,22 @@ a:hover {
     max-width: 600px;
 }
 
+.photo {
+    /*border: var(--borderThickness) solid var(--borderColor);*/
+    /*background-color: white;*/
+    cursor: pointer;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    /*vertical-align: middle;*/
+    /*margin-top: auto;*/
+    /*margin-bottom: auto;*/
+    /*box-shadow: 0px 10px 8px var(--darkGray);*/
+}
+.photo:hover {
+    opacity: 0.8;
+}
+
 #profile {
     width: var(--profileImageSize);
     height: var(--profileImageSize);
@@ -144,6 +158,9 @@ a:hover {
     margin: auto;
     border-radius: 200%;
     box-shadow: 0px 10px 8px var(--darkGray);
+}
+#profile:hover {
+    opacity: 1;
 }
 
 #aboutInfo {
