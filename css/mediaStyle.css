@@ -127,9 +127,9 @@ button {
 }
 .previous:active {
     /*background: rgba(0, 0, 0, .5);*/
-    background: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
-    background: -webkit-linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
-    background: -moz-linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: -webkit-linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(to right, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
     /*opacity: .5;*/
 }
 
@@ -147,9 +147,9 @@ button {
 .next:active {
     /*opacity: .5;*/
     /*background: rgba(0, 0, 0, .5);*/
-    background: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
-    background: -webkit-linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
-    background: -moz-linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+    background: linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: -webkit-linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: -moz-linear-gradient(to left, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
 }
 
 .photoSlide {
