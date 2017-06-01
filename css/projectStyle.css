@@ -50,11 +50,15 @@
 /*********************************************/
 
 .showcase {
-    overflow: scroll;
+    /*overflow: scroll;*/
     user-select: none;
     -webkit-user-select: none;  /* Chrome/Safari */        
     -moz-user-select: none;     /* Firefox */
     -ms-user-select: none;      /* IE10+ */
+}
+
+.container {
+    overflow: scroll;
 }
 
 /* key defines the most general atributes of the musical keyboard keys */
