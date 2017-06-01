@@ -50,7 +50,7 @@
 /*********************************************/
 
 .showcase {
-    /*overflow: scroll;*/
+    /*border: 1px solid white;*/
     user-select: none;
     -webkit-user-select: none;  /* Chrome/Safari */        
     -moz-user-select: none;     /* Firefox */

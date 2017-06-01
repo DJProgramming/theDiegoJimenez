@@ -1092,7 +1092,7 @@ function noteProgression(count, input) {
 // ------------------------------------------------------------------
 
  function toggleVisibility(input) {
-    $(input).toggle();
+    $(input).toggle(1000);
 }
 
 function hideClass(input) {
