@@ -71,18 +71,6 @@ var highlight = {
 
 var programControl = {                      // flags for different web-pages in program
     main: true,                             // home page flag
-    lesson1: false,                         // keyboard usage lesson flag
-    noteLesson: false,                      // note lesson page flag
-    noteQuiz: false,                        // note quiz page flag
-    stepLesson: false,                      // step lesson page flag
-    stepQuiz: false,                        // step quize page flag
-    lessonScales: false,                    // scale lesson page flag
-    intervalQuiz: false,                    // interval quize page flag
-    scalesQuiz: false,                      // scale quiz page flag
-    lessonStaff: false,                     // 
-    reference: false,
-    step: 1,
-    maxStep: 0
 };
 
 // ******************************************************************
@@ -91,7 +79,6 @@ var programControl = {                      // flags for different web-pages in 
 
 document.addEventListener("keydown", keyboardTrigger, false);       // responds to key down events
 document.addEventListener("keyup", keyboardUntrigger, false);       // responds to key up events
-document.addEventListener("keypress", showDebug, false);            // responds to key presses
 
 // is called when html body is loaded to load MIDI.JS plugin
 function load() {
@@ -102,7 +89,7 @@ function load() {
             MIDI.setVolume(0, globalVelocity);                      // set velocity of midi plugin
         }
     })
-    setTempo(120);                                                  // set default tempo to 120 bpm (beats per minute)
+    setTempo(140);                                                  // set default tempo to 120 bpm (beats per minute)
 }
 
 function initializeCanColorArray() {
@@ -115,159 +102,12 @@ function initializeCanColorArray() {
 // Program Controls
 // ------------------------------------------------------------------
 
-function lesson1() {                                                // when lesson one is loaded
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = true;                                  // 
-    programControl.lessonScales = false;
-    programControl.stepQuiz = false;                                // set step quiz flag to true
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-    hideClass('keyname');
-    hideClass('hardwareKey');
-    showClass('1');
-    programControl.maxStep = 6;
-}
-
-function noteQuiz() {                                               // when step quiz is loaded
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = false;                                 //
-    programControl.noteQuiz = true;
-    programControl.stepQuiz = false;                                 // set step quiz flag to true
-    programControl.lessonScales = false;
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-    programControl.reference = false;
-}
-
-function stepQuiz() {                                               // when step quiz is loaded
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = false;                                 //
-    programControl.stepQuiz = true;                                 // set step quiz flag to true
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-    programControl.reference = false;
-}
-
-function lessonScales() {
-    programControl.lessonScales = true;
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = false;                                 //
-    programControl.stepQuiz = true;                                 // set step quiz flag to true
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-    programControl.reference = false;
-    showClass('1');
-    programControl.step = 1;
-    programControl.maxStep = 4;
-}
-
-function intervalQuiz() {
-    programControl.intervalQuiz = true;
-    programControl.main = false;
-    programControl.lesson1 = false;
-    programControl.stepQuiz = false;
-    programControl.lessonStaff = false;
-    programControl.reference = false;
-}
-
-function lessonStaff() {
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = false;                                 //
-    programControl.stepQuiz = true;                                 // set step quiz flag to true
-    programControl.lessonScales = false;
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = true;
-    programControl.reference = false;
-    showClass('1');
-    programControl.step = 1;
-    programControl.maxStep = 4;
-}
-
-function lessonCircle() {
-    programControl.main = false;                                    // set main page flag to false
-    programControl.lesson1 = false;                                 //
-    programControl.stepQuiz = true;                                 // set step quiz flag to true
-    programControl.lessonScales = false;
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-    programControl.lessonCircle = true;
-    programControl.reference = false;
-    showClass('1');
-    programControl.step = 1;
-    programControl.maxStep = 5;
-}
-
-function reference() {
-    highlightRootNote();
-    programControl.reference = true;
-    programControl.main = false;
-    programControl.lesson1 = false;
-    programControl.stepQuiz = false;
-    programControl.intervalQuiz = false;
-    programControl.lessonStaff = false;
-}
-
 // controls what clicking on a note does depending on context of the program (current web page)
 function contextualClick(value, octave, id) {
     unhighlightAll();
     if(programControl.main) {
         playSingleNote(value, octave);
         triggerColor(id);
-    } else if(programControl.lesson1) {
-        playSingleNote(value, octave);
-        triggerColor(id);
-    } else if(programControl.noteQuiz) {
-        playSingleNote(value, octave);
-        triggerColor(id);
-        clickFunction(value, octave);
-    }
-    else if(programControl.stepQuiz) {
-        playSingleNote(value, octave);
-        triggerColor(id);
-        clickFunction(value, octave);
-    } else if(programControl.lessonScales) {
-
-    } else {
-        playSingleNote(value, octave);
-        triggerColor(id);
-        clickFunction(value, octave);
-    }
-}
-
-function next() {
-    if(programControl.main) {
-
-    } else if(programControl.lesson1) {
-        if(programControl.step < programControl.maxStep) {
-            hideClass(programControl.step.toString());
-            programControl.step++;
-            showClass(programControl.step.toString());
-        }
-    } else {
-        console.log("next");
-        if(programControl.step < programControl.maxStep) {
-            hideClass(programControl.step.toString());
-            programControl.step++;
-            showClass(programControl.step.toString());
-        }
-    }
-}
-
-function previous() {
-    if(programControl.main) {
-
-    } else if(programControl.lesson1) {
-        if(programControl.step > 1) {
-            hideClass(programControl.step.toString());
-            programControl.step--;
-            showClass(programControl.step.toString());
-        }
-    } else {
-        if(programControl.step > 1) {
-            hideClass(programControl.step.toString());
-            programControl.step--;
-            showClass(programControl.step.toString());
-        }
     }
 }
 
@@ -281,7 +121,7 @@ function setTempo(tempo) {
 
 // change the value of the global note
 function changeGlobalNote(value) {
-    if(highlight.majorScale) {                      // if major scale is hightlighted
+    if(highlight.majorScale) {                      // if major scale is highlighted
         highlightMajorScale();                      // unhighlight current major scale
         highlight.majorScale = true;                // set flag to highlight new major scale
     } else if(highlight.minorScale) {               // if minor scale is highlighted
@@ -341,6 +181,8 @@ function changeGlobalNote(value) {
         highlight.rootNote = false;
         highlightRootNote();
     }
+    // highlight.rootNote = false;
+    // highlightRootNote();
 }
 
 // ------------------------------------------------------------------
@@ -1179,7 +1021,7 @@ function revertSelectColor(input) {
     }
 }
 
-// hightlight all
+// highlight all
 function unhighlightConcepts() {
     if(highlight.majorScale) {           // if major scale is highlighted
         highlightMajorScale();          // unhighlight major scale before playing major chord
@@ -1250,14 +1092,7 @@ function noteProgression(count, input) {
 // ------------------------------------------------------------------
 
  function toggleVisibility(input) {
-    var mydiv = document.getElementsByClassName(input);
-    for (var i = 0; i < mydiv.length; i++) {
-        if(mydiv[i].style.display == 'none') {
-            mydiv[i].style.display = 'block';
-        } else {
-            mydiv[i].style.display = 'none';
-        }
-    }
+    $(input).toggle();
 }
 
 function hideClass(input) {
@@ -1272,45 +1107,4 @@ function showClass(input) {
     for(var i = 0; i < mydiv.length; i++) {
         mydiv[i].style.display = 'block';
     }
-}
-
-function showDebug(input) {
-    var unicode = input.keyCode ? input.keyCode : input.charCode;
-    if(unicode == 96) {             // `
-        toggleVisibility('debug');
-    }
-}
-
-//////////
-
-function showSnackBar(input) {
-    // Get the snackbar DIV
-    var x = document.getElementById("snackbar");
-
-    // Add the "show" class to DIV
-    if (input == false){
-        x.textContent = "Wrong!";
-        x.className = "show";
-    }
-    else if (input == true){
-        x.textContent = "Correct";
-        x.className = "show";
-    }
-
-    // After 3 seconds, remove the show class from DIV
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-}
-
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-    document.getElementById("window").style.marginLeft = "250px";
-    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-}
-
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-    document.getElementById("window").style.marginLeft = "0";
-    document.body.style.backgroundColor = "white";
 }

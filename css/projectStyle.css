@@ -59,6 +59,9 @@
 
 .container {
     overflow: scroll;
+    padding: 0 0 15px 0;
+    border: 15px solid black;
+
 }
 
 /* key defines the most general atributes of the musical keyboard keys */
@@ -159,6 +162,23 @@
     box-shadow: inset var(--borderOffset) 0 0 calc(-1 * var(--borderThickness)) var(--borderColor), inset calc(-1 * var(--borderOffset)) calc(-1 * var(--borderOffset)) 0 calc(-1 * var(--borderThickness)) var(--borderColor);
 }
 
+.keyboardOptions {
+    color: white;
+    padding: 15px;
+    /*width: 100%;*/
+    float: left;
+    /*width: 120px;*/
+    cursor: pointer;
+    border: 1px solid white;
+}
+
+.noteSelection {
+    text-align: center;
+    /*width: 8.33%;*/
+    width: 3em;
+    max-height: 3em;
+}
+
 /*********************************************/
 /* IDs */
 /*********************************************/
@@ -168,13 +188,36 @@
     width: calc(var(--whiteKeyWidth) * var(--numberOfWhiteKeys));
     /*width: calc(100% - var(--whiteKeyHeight)/20);*/
     margin: auto;
-    margin-top: var(--generalPadding);
-    margin-bottom: var(--generalPadding);
+    /*margin-top: var(--generalPadding);*/
+    /*margin-bottom: var(--generalPadding);*/
     min-height: var(--whiteKeyHeight);
-    /*box-shadow: 0 0 calc(var(--whiteKeyHeight)/10) calc(var(--whiteKeyHeight)/40) black;*/
-    /*box-shadow: 0 0 calc(var(--whiteKeyHeight)/10) calc(var(--whiteKeyHeight)/100) black;*/
-    box-shadow: 0 calc(var(--whiteKeyHeight)/10) calc(var(--whiteKeyHeight)/20) black;
-    border: calc(var(--whiteKeyHeight)/20) solid white;
+    /*border: calc(var(--whiteKeyHeight)/20) solid white;*/
+}
+
+#keyboardMenu {
+    color: white;
+    /*border: 1px solid white;*/
+    display: none;
+}
+
+#showKeys {
+    display: inline-block;
+}
+
+#noteSelection {
+    display: inline-block;
+}
+
+#tempoSelection {
+    display: inline-block;
+}
+
+#highlightOptions {
+    display: inline-block;
+}
+
+#conceptOptions {
+    display: inline-block;
 }
 
 /*********************************************/
