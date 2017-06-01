@@ -1109,12 +1109,28 @@ function showClass(input) {
     }
 }
 
+var keyboardOptionButtons;
+
 function main() {
     changeButtonState();
+    highlightDefaultButtons();
+}
+
+function highlightDefaultButtons() {
+    keyboardOptionButtons = document.getElementsByClassName("keyboardOption");
+    // highlight default note
+    noteHolder = keyboardOptionButtons[8];
+    $(keyboardOptionButtons[8]).css("background", "white");
+    $(keyboardOptionButtons[8]).css("color", "black");
+    // highlight default tempo
+    tempoHolder = keyboardOptionButtons[26];
+    $(keyboardOptionButtons[26]).css("background", "white");
+    $(keyboardOptionButtons[26]).css("color", "black");
 }
 
 var highlightHolder = "";
 var noteHolder = "";
+var tempoHolder = "";
 
 function changeButtonState() {
     $("#highlightOptions .keyboardOption").click(function() {
@@ -1136,6 +1152,15 @@ function changeButtonState() {
         $(this).css("background", "white");
         $(this).css("color", "black");
         noteHolder = this;
+    });
+    $("#tempoSelection .keyboardOption").click(function() {
+        if(tempoHolder != "") {
+            $(tempoHolder).css("background", "black");
+            $(tempoHolder).css("color", "white");
+        }
+        $(this).css("background", "white");
+        $(this).css("color", "black");
+        tempoHolder = this;
     });
 }
 
