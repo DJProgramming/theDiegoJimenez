@@ -178,11 +178,19 @@
     /*background: var(--evilDarkGray);*/
 }
 
+.highlightOption {
+    text-align: center;
+    width: 10em;
+}
+
 .noteSelection {
     text-align: center;
-    /*width: 8.33%;*/
     width: 3em;
-    max-height: 3em;
+}
+
+.conceptOption {
+    text-align: center;
+    width: 10em;
 }
 
 /*********************************************/
