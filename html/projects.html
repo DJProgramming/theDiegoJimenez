@@ -80,53 +80,53 @@
 						--><div class="key rStraightKey" id="e5Key" onclick="contextualClick('e', 5, this.id)"><div class="hardwareName">m</div><div class="keyName">E</div></div>
 					</div>
 				</div>
-				<div class="keyboardOptions" onclick="toggleVisibility('#keyboardMenu')">Show Options</div>
+				<div class="keyboardOption" id="showOptionsButton" onclick="toggleVisibility('#keyboardMenu')">Show Options</div>
 				<div class="col-12 col-m-12" id="keyboardMenu">
 					<div id="showKeys">
-						<div class="keyboardOptions" onclick="toggleVisibility('.keyName')">Toggle Key Names</div>
-						<div class="keyboardOptions" onclick="toggleVisibility('.hardwareName')">Toggle Hardware Key Names</div>
+						<div class="keyboardOption" onclick="toggleVisibility('.keyName')">Toggle Key Names</div>
+						<div class="keyboardOption" onclick="toggleVisibility('.hardwareName')">Toggle Hardware Key Names</div>
 					</div>
 					<br/><span>Highlight Options:</span><br/>
 					<div id="highlightOptions">
-						<div class="keyboardOptions" onclick="highlightMajorScale()">Toggle Major Scale</div>
-						<div class="keyboardOptions" onclick="highlightMinorScale()">Toggle Minor Scale</div>
-						<div class="keyboardOptions" onclick="highlightMajorChord()">Toggle Major Chord</div>
-						<div class="keyboardOptions" onclick="highlightMinorChord()">Toggle Minor Chord</div>
-						<div class="keyboardOptions" onclick="unhighlightAll()">Unhighlight</div>
+						<div class="keyboardOption" onclick="highlightMajorScale()">Toggle Major Scale</div>
+						<div class="keyboardOption" onclick="highlightMinorScale()">Toggle Minor Scale</div>
+						<div class="keyboardOption" onclick="highlightMajorChord()">Toggle Major Chord</div>
+						<div class="keyboardOption" onclick="highlightMinorChord()">Toggle Minor Chord</div>
+						<div class="keyboardOption" onclick="unhighlightAll()">Unhighlight</div>
 					</div>
 					<br/><span>Note Selection:</span><br/>
 					<div id="noteSelection">
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('c')">c</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('db')">d<sup>b</sup></div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('d')">d</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('eb')">e<sup>b</sup></div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('e')">e</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('f')">f</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('gb')">g<sup>b</sup></div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('g')">g</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('ab')">a<sup>b</sup></div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('a')">a</div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('bb')">b<sup>b</sup></div>
-						<div class="keyboardOptions noteSelection" onclick="changeGlobalNote('b')">b</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('c')">c</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('db')">d<sup>b</sup></div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('d')">d</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('eb')">e<sup>b</sup></div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('e')">e</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('f')">f</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('gb')">g<sup>b</sup></div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('g')">g</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('ab')">a<sup>b</sup></div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('a')">a</div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('bb')">b<sup>b</sup></div>
+						<div class="keyboardOption noteSelection" onclick="changeGlobalNote('b')">b</div>
 					</div>
 					<br/><span>Play Options:</span><br/>
 					<div id="conceptOptions">
 					<!-- These buttons are only used for testing and debugging purposes -->
 						<!-- <input type="button" onclick="playNote()" value="Play Root Note"/> -->
-						<div class="keyboardOptions" onclick="playMajorScale()">Play Major Scale</div>
-						<div class="keyboardOptions" onclick="playMinorScale()">Play Minor Scale</div>
-						<div class="keyboardOptions" onclick="playMajorTriChord()">Play Major Chord</div>
-						<div class="keyboardOptions" onclick="playMinorTriChord()">Play Minor Chord</div>
+						<div class="keyboardOption" onclick="playMajorScale()">Play Major Scale</div>
+						<div class="keyboardOption" onclick="playMinorScale()">Play Minor Scale</div>
+						<div class="keyboardOption" onclick="playMajorTriChord()">Play Major Chord</div>
+						<div class="keyboardOption" onclick="playMinorTriChord()">Play Minor Chord</div>
 					</div>
 					<br/><span>Tempo Selection:</span><br/>
 					<div id="tempoSelection">
 					<!-- To add a new tempo option simply create an input button and call setTempo 
 					with the desired value as the argument as shown below -->
-						<div class="keyboardOptions" onclick="setTempo(100)">slowest</div>
-						<div class="keyboardOptions" onclick="setTempo(120)">slow</div>
-						<div class="keyboardOptions" onclick="setTempo(140)">normal</div>
-						<div class="keyboardOptions" onclick="setTempo(160)">fast</div>
-						<div class="keyboardOptions" onclick="setTempo(180)">fastest</div>
+						<div class="keyboardOption" onclick="setTempo(100)">slowest</div>
+						<div class="keyboardOption" onclick="setTempo(120)">slow</div>
+						<div class="keyboardOption" onclick="setTempo(140)">normal</div>
+						<div class="keyboardOption" onclick="setTempo(160)">fast</div>
+						<div class="keyboardOption" onclick="setTempo(180)">fastest</div>
 					</div>
 				</div>
 			</div>

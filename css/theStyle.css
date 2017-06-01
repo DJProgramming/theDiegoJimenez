@@ -2,6 +2,7 @@
 :root {
     /* color */
     --backgroundColor: black;
+    --lightGray: #999;
     --evilDarkGray: #666;       /* dark gray */
     --darkGray: #333;           /* dark dark gray */
     --borderColor: white;

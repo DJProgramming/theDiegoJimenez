@@ -162,14 +162,20 @@
     box-shadow: inset var(--borderOffset) 0 0 calc(-1 * var(--borderThickness)) var(--borderColor), inset calc(-1 * var(--borderOffset)) calc(-1 * var(--borderOffset)) 0 calc(-1 * var(--borderThickness)) var(--borderColor);
 }
 
-.keyboardOptions {
+.keyboardOption {
+    box-sizing: border-box;
     color: white;
     padding: 15px;
+    height: 3em;
     /*width: 100%;*/
     float: left;
     /*width: 120px;*/
     cursor: pointer;
     border: 1px solid white;
+}
+.keyboardOption:hover {
+    border: 4px double white;
+    /*background: var(--evilDarkGray);*/
 }
 
 .noteSelection {

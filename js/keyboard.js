@@ -1108,3 +1108,35 @@ function showClass(input) {
         mydiv[i].style.display = 'block';
     }
 }
+
+function main() {
+    changeButtonState();
+}
+
+var highlightHolder = "";
+var noteHolder = "";
+
+function changeButtonState() {
+    $("#highlightOptions .keyboardOption").click(function() {
+        if(highlightHolder != "") {
+            $(highlightHolder).css("background", "black");
+            $(highlightHolder).css("color", "white");
+        }
+        if(highlightHolder != this && this.textContent != "Unhighlight") {
+            $(this).css("background", "white");
+            $(this).css("color", "black");
+        }
+        highlightHolder = this;
+    });
+    $("#noteSelection .keyboardOption").click(function() {
+        if(noteHolder != "") {
+            $(noteHolder).css("background", "black");
+            $(noteHolder).css("color", "white");
+        }
+        $(this).css("background", "white");
+        $(this).css("color", "black");
+        noteHolder = this;
+    });
+}
+
+$(document).ready(main);
