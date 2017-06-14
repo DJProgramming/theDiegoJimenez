@@ -2,6 +2,7 @@ var main = function() {
   menu();               // show or hide menu
   toggleVideos();       // show or hide videos
   togglePhotos();       // show or hide photos
+  toggleAudio();        // show or hide audio
   showMedia();          // show all media
   resizeVideoHeight();  // resize video height
   // displayModal();
@@ -19,6 +20,7 @@ var toggleVideos = function() {
   resizeVideoHeight();
   $('#videoToggle').click(function() {
     $('.videos').fadeIn(1000);
+    $('.audio').fadeOut(1000);
     $('.photos').fadeOut(1000);
   });
 }
@@ -29,6 +31,17 @@ var togglePhotos = function() {
   $('#photoToggle').click(function() {
     $('.photos').fadeIn(1000);
     $('.videos').fadeOut(1000);
+    $('.audio').fadeOut(1000);
+  });
+};
+
+// show only photos
+var toggleAudio = function() {
+  resizeVideoHeight();
+  $('#audioToggle').click(function() {
+    $('.audio').fadeIn(1000);
+    $('.videos').fadeOut(1000);
+    $('.photos').fadeOut(1000);
   });
 };
 
@@ -38,6 +51,7 @@ var showMedia = function() {
   $('#mediaToggle').click(function() {
     $('.photos').fadeIn(1000);
     $('.videos').fadeIn(1000);
+    $('.audio').fadeIn(1000);
   });
 };
 
