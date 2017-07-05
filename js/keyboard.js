@@ -69,6 +69,14 @@ var highlight = {
     minorChord: false                       // minor chord highlight flag
 };
 
+var select = {
+    rootNote: false,                        //
+    majorScale: false,                      // major scale highlight flag
+    minorScale: false,                      // minor scale highlight flag
+    majorChord: false,                      // major chord highlight flag
+    minorChord: false                       // minor chord highlight flag
+};
+
 var programControl = {                      // flags for different web-pages in program
     main: true,                             // home page flag
 };
@@ -191,16 +199,16 @@ function changeGlobalNote(value) {
 
 function playMajorScale() {
     if(!timingFunctionIsExecuting) {
-        var index = 0;              // used as a seed for noteProgression & scaleKeyColoring functions
+        var index = 0;              // used as a root for noteProgression & scaleKeyColoring functions
         var notesInScale = {};      // a local array that stores the notes that make up selcted major scale (used for playing scale)
         var keysToColor = {};       // a local array that stores the div ids that make up selected major scale (used for coloring)
 
         unhighlightConcepts();
 
-        for(var i = 0; i < scaleLength; i++) {                                  // loop to identify notes that make up major scale
-            divInfo = getDivIDNoteOctaveFromMidiValue(globalNote+majorScale[scaleProgression[i]]);   // gets div id, note name, & octave for current note in major scale
-            keysToColor[i] = divInfo[0];                                        // store div id into local array to color keys after loop ends
-            notesInScale[i] = globalNote+majorScale[scaleProgression[i]];       // store note value in local array to play each note after loop ends
+        for(var i = 0; i < scaleLength; i++) {                                                      // loop to identify notes that make up major scale
+            divInfo = getDivIDNoteOctaveFromMidiValue(globalNote+majorScale[scaleProgression[i]]);  // gets div id, note name, & octave for current note in major scale
+            keysToColor[i] = divInfo[0];                                                            // store div id into local array to color keys after loop ends
+            notesInScale[i] = globalNote+majorScale[scaleProgression[i]];                           // store note value in local array to play each note after loop ends
         }
         noteProgression(index, notesInScale);   // plays each note that makes up major scale
         scaleKeyColoring(index, keysToColor);   // colors each note as scale is major played
@@ -209,16 +217,16 @@ function playMajorScale() {
 
 function playMinorScale() {
     if(!timingFunctionIsExecuting) {
-        var index = 0;              // used as a seed for noteProgression & scaleKeyColoring functions
+        var index = 0;              // used as a root for noteProgression & scaleKeyColoring functions
         var notesInScale = {};      // a local array that stores the notes that make up selcted minor scale (used for playing scale)
         var keysToColor = {};       // a local array that stores the div ids that make up selected minor scale (used for coloring)
 
         unhighlightConcepts();
 
-        for(var i = 0; i < scaleLength; i++) {                                  // loop to identify notes that make up minor scale
-            divInfo = getDivIDNoteOctaveFromMidiValue(globalNote+minorScale[scaleProgression[i]]);   // gets div id, note name, & octave for current note in minor scale
-            keysToColor[i] = divInfo[0];                                        // store div id into local array to color keys after loop ends
-            notesInScale[i] = globalNote+minorScale[scaleProgression[i]];       // store note value in local array to play each note after loop ends
+        for(var i = 0; i < scaleLength; i++) {                                                      // loop to identify notes that make up minor scale
+            divInfo = getDivIDNoteOctaveFromMidiValue(globalNote+minorScale[scaleProgression[i]]);  // gets div id, note name, & octave for current note in minor scale
+            keysToColor[i] = divInfo[0];                                                            // store div id into local array to color keys after loop ends
+            notesInScale[i] = globalNote+minorScale[scaleProgression[i]];                           // store note value in local array to play each note after loop ends
         }
         noteProgression(index, notesInScale);   // plays each note that makes up minor scale
         scaleKeyColoring(index, keysToColor);   // colors each note as scale is minor played
@@ -268,7 +276,7 @@ function startNote(value, octave) {
 }
 
 function stopNote(value, octave) {
-    unhighlightAll();
+    //unhighlightAll();
     var key = getMidiValue(value, octave); // calls function to determine note to play
     MIDI.noteOff(0, key, 0);
 }
@@ -783,7 +791,7 @@ function keyboardTrigger(input) {
     keyAllowed[input.which] = false;                    // keep key from retriggering until released
     var array = getDivIDNoteOctaveFromUnicode(input);   // check what keyboard key was pressed
     if(array[0] != '1') {                               // checks whether keyboard input is valid
-        changeColor(array[0]);                          // highlight note being played
+        changeSelectColor(array[0]);                          // highlight note being played
         startNote(array[1], array[2]);                  // play audio corresponding to note being pressed
     }
 }
@@ -792,7 +800,7 @@ function keyboardUntrigger(input) {
     keyAllowed [input.which] = true;                    // allow key to retrigger once released
     var array = getDivIDNoteOctaveFromUnicode(input);   // check what keyboard key was pressed
     if(array[0] != '1') {                               // checks whether keyboard input is valid
-        revertColor(array[0]);                          // 
+        revertSelectColor(array[0]);                          // 
         stopNote(array[1], array[2]);
     }
 }
@@ -978,30 +986,34 @@ function revertColor(input) {
 // highlight key
 // called by keyboardTrigger
 // input is the name of div to change
-function toggleColor(input) {
-    if(canColor[input] == false) { return; }
-    if(hasClass(document.getElementById(input), 'lStraightKey') || hasClass(document.getElementById(input), 'cuttKey') || hasClass(document.getElementById(input), 'rStraightKey')) {
-        $(input).toggleClass("key");
-        $(input).toggleClass("highlightKey");
-    } else if(hasClass(document.getElementById(input), 'blackKey')) {
-        $(input).toggleClass("highlightBlackKey");
-        $(input).toggleClass("blackKey");
-    }
-}
-
-// highlight key
-// called by keyboardTrigger
-// input is the name of div to change
 function changeSelectColor(input) {
     if(canColor[input] == false) { return; }
-    if(hasClass(document.getElementById(input), 'lStraightKey')) {
-        document.getElementById(input).className = "selectKey lStraightKey";
-    } else if(hasClass(document.getElementById(input), 'cutKey')) {
-        document.getElementById(input).className = "selectKey cutKey";
-    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
-        document.getElementById(input).className = "selectKey rStraightKey";
-    } else if(hasClass(document.getElementById(input), 'blackKey')) {
-        document.getElementById(input).className = "key selectBlackKey";
+    var highlighted = false;
+    if(hasClass(document.getElementById(input), 'highlightKey') || hasClass(document.getElementById(input), 'highlightBlackKey')) {
+        highlighted = true;
+    }
+    if(!highlighted) {
+        // console.log("Not highlighted");
+        if(hasClass(document.getElementById(input), 'lStraightKey')) {
+            document.getElementById(input).className = "selectKey lStraightKey";
+        } else if(hasClass(document.getElementById(input), 'cutKey')) {
+            document.getElementById(input).className = "selectKey cutKey";
+        } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+            document.getElementById(input).className = "selectKey rStraightKey";
+        } else if(hasClass(document.getElementById(input), 'blackKey')) {
+            document.getElementById(input).className = "key selectBlackKey";
+        }
+    } else {
+        console.log("Highlighted");
+        if(hasClass(document.getElementById(input), 'lStraightKey')) {
+            document.getElementById(input).className = "highlightKey selectKey lStraightKey";
+        } else if(hasClass(document.getElementById(input), 'cutKey')) {
+            document.getElementById(input).className = "highlightKey selectKey cutKey";
+        } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+            document.getElementById(input).className = "highlightKey selectKey rStraightKey";
+        } else if(hasClass(document.getElementById(input), 'highlightBlackKey')) {
+            document.getElementById(input).className = "key highlightBlackKey selectBlackKey";
+        }
     }
 }
 
@@ -1010,14 +1022,32 @@ function changeSelectColor(input) {
 // input is the name of div to change
 function revertSelectColor(input) {
     if(canColor[input] == false) { return; }
-    if(hasClass(document.getElementById(input), 'lStraightKey')) {
-        document.getElementById(input).className = "key lStraightKey";
-    } else if(hasClass(document.getElementById(input), 'cutKey')) {
-        document.getElementById(input).className = "key cutKey";
-    } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
-        document.getElementById(input).className = "key rStraightKey";
-    } else if(hasClass(document.getElementById(input), 'selectBlackKey')) {
-        document.getElementById(input).className = "key blackKey";
+    var highlighted = false;
+    if(hasClass(document.getElementById(input), 'highlightKey') || hasClass(document.getElementById(input), 'highlightBlackKey')) {
+        highlighted = true;
+    }
+    if(!highlighted) {
+        console.log("Not highlighted");
+        if(hasClass(document.getElementById(input), 'lStraightKey')) {
+            document.getElementById(input).className = "key lStraightKey";
+        } else if(hasClass(document.getElementById(input), 'cutKey')) {
+            document.getElementById(input).className = "key cutKey";
+        } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+            document.getElementById(input).className = "key rStraightKey";
+        } else if(hasClass(document.getElementById(input), 'selectBlackKey')) {
+            document.getElementById(input).className = "key blackKey";
+        }
+    } else {
+        console.log("Highlighted");
+        if(hasClass(document.getElementById(input), 'lStraightKey')) {
+            document.getElementById(input).className = "highlightKey lStraightKey";
+        } else if(hasClass(document.getElementById(input), 'cutKey')) {
+            document.getElementById(input).className = "highlightKey cutKey";
+        } else if(hasClass(document.getElementById(input), 'rStraightKey')) {
+            document.getElementById(input).className = "highlightKey rStraightKey";
+        } else if(hasClass(document.getElementById(input), 'highlightBlackKey')) {
+            document.getElementById(input).className = "key highlightBlackKey";
+        }
     }
 }
 
@@ -1042,11 +1072,44 @@ function unhighlightAll() {
     highlight.minorScale = false;
     highlight.majorChord = false;
     highlight.minorChord = false;
+    select.rootNote = false;
+    select.majorScale = false;
+    select.minorScale = false;
+    select.majorChord = false;
+    select.minorChord = false;
     for(var i = 0; i < numberOfKeys; i++) {
         div = getDivIDNoteOctaveFromMidiValue(i+48);
         revertColor(div[0]);
         revertSelectColor(div[0]);
         // console.log(div);
+    }
+}
+
+function unhighlight() {
+    // unhighlightConcepts();
+    var div;
+    highlight.rootNote = false;
+    highlight.majorScale = false;
+    highlight.minorScale = false;
+    highlight.majorChord = false;
+    highlight.minorChord = false;
+    for(var i = 0; i < numberOfKeys; i++) {
+        div = getDivIDNoteOctaveFromMidiValue(i+48);
+        revertColor(div[0]);
+    }
+}
+
+function unselect() {
+    // unhighlightConcepts();
+    var div;
+    select.rootNote = false;
+    select.majorScale = false;
+    select.minorScale = false;
+    select.majorChord = false;
+    select.minorChord = false;
+    for(var i = 0; i < numberOfKeys; i++) {
+        div = getDivIDNoteOctaveFromMidiValue(i+48);
+        revertSelectColor(div[0]);
     }
 }
 
@@ -1129,18 +1192,30 @@ function highlightDefaultButtons() {
 }
 
 var highlightHolder = "";
+var highlightState = "off";
 var noteHolder = "";
 var tempoHolder = "";
 
 function changeButtonState() {
     $("#highlightOptions .keyboardOption").click(function() {
-        if(highlightHolder != "") {
+        if(highlightHolder == this && highlightState == "off" && this.textContent != "Unhighlight") {
+            $(highlightHolder).css("background", "white");
+            $(highlightHolder).css("color", "black");
+            highlightState = "on";
+        } else if(highlightHolder == this && highlightState == "on" && this.textContent != "Unhighlight") {
             $(highlightHolder).css("background", "black");
             $(highlightHolder).css("color", "white");
-        }
-        if(highlightHolder != this && this.textContent != "Unhighlight") {
+            highlightState = "off";
+        } else if(highlightHolder != this && this.textContent != "Unhighlight") {
+            $(highlightHolder).css("background", "black");
+            $(highlightHolder).css("color", "white");
             $(this).css("background", "white");
             $(this).css("color", "black");
+            highlightState = "on";
+        } else if(this.textContent == "Unhighlight") {
+            $(highlightHolder).css("background", "black");
+            $(highlightHolder).css("color", "white");
+            highlightState = "off";
         }
         highlightHolder = this;
     });

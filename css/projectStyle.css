@@ -84,6 +84,15 @@
     border-bottom-right-radius: calc(var(--whiteKeyWidth) / var(--keyRoundingRadius));
 }
 
+.selectKey {
+    background: var(--selectColor);
+}
+.selectKey:after {
+    background: var(--selectColor);
+    border-bottom-left-radius: calc(var(--whiteKeyWidth) / var(--keyRoundingRadius));
+    border-bottom-right-radius: calc(var(--whiteKeyWidth) / var(--keyRoundingRadius));
+}
+
 .blackKey {
     background: var(--blackKeyColor);
     display: inline-block;
@@ -95,6 +104,16 @@
 
 .highlightBlackKey {
     background: var(--highlightColor);
+    display: inline-block;
+    width: var(--blackKeyWidth);
+    height: var(--blackKeyHeight);
+    box-shadow: inset var(--borderOffset) var(--borderOffset) 0 calc(-1 * var(--borderThickness)) var(--borderColor), inset calc(-1 * var(--borderOffset)) calc(-1 * var(--borderOffset)) 0 calc(-1 * var(--borderThickness)) var(--borderColor);
+    z-index: var(--minDepth); /* place above other keys */
+    position: relative;
+}
+
+.selectBlackKey {
+    background: var(--selectColor);
     display: inline-block;
     width: var(--blackKeyWidth);
     height: var(--blackKeyHeight);
@@ -164,6 +183,7 @@
 
 .keyboardOption {
     box-sizing: border-box;
+    overflow: hidden;
     color: white;
     padding: 15px;
     height: 3em;
