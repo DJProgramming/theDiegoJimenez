@@ -112,10 +112,11 @@ function initializeCanColorArray() {
 
 // controls what clicking on a note does depending on context of the program (current web page)
 function contextualClick(value, octave, id) {
-    unhighlightAll();
+    // unhighlightAll();
     if(programControl.main) {
         playSingleNote(value, octave);
-        triggerColor(id);
+        triggerSelectColor(id);
+        // triggerColor(id);
     }
 }
 
@@ -1123,6 +1124,16 @@ function triggerColor(input) {
     // toggleColor(input);
     setTimeout(function () {
         revertColor(input);
+        // toggleColor(input);
+    }, globalTempo);
+}
+
+function triggerSelectColor(input) {
+    // unhighlightAll();
+    changeSelectColor(input);
+    // toggleColor(input);
+    setTimeout(function () {
+        revertSelectColor(input);
         // toggleColor(input);
     }, globalTempo);
 }
